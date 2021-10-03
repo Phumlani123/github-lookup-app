@@ -1,6 +1,6 @@
 import React from 'react';
 import GitHubService from '../../services/github/Github';
-import { GitHubActivityData, GitHubUser, GitHubUserData, GitHubUserSearchData } from '../../services/github/types';
+import { GitHubActivityData, GitHubUser, GitHubUserSearchData } from '../../services/github/types';
 import { gitHubDataContext, GitHubDataContext } from './GitHubDataContext';
 
 const GitHubDataProvider = ({ children }: { children: React.ReactNode | React.ReactNode[]}) => {
@@ -19,7 +19,7 @@ function ProvideGitHubData(): GitHubDataContext {
   
   const [userSearchData, setSearchData] = React.useState<GitHubUserSearchData | null>(null);
   const [userActivityData, setActivityData] = React.useState<GitHubActivityData | null>(null);
-  const [userData, setData] = React.useState<GitHubUserData | null>(null);
+  const [userData, setData] = React.useState<any | null>(null);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<string | null>(null);
 
@@ -53,9 +53,9 @@ function ProvideGitHubData(): GitHubDataContext {
   const setUserData = async (username: string) => {
     setLoading(true);
     const data = await GitHubService.getUserData(username);
+    // console.log('service data =', data[0]);
     if(data) {
-      setData(data);
-      console.log('response', data);
+      setData(data[0]);
       setLoading(false);
       setError(null);
     } else {
@@ -64,8 +64,6 @@ function ProvideGitHubData(): GitHubDataContext {
     }
   }
   
-  console.log('response user data', userData);
-
   return {
     userSearchData,
     userActivityData,

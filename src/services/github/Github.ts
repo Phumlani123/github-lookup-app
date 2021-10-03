@@ -1,4 +1,4 @@
-import { GitHubActivityData, GitHubUser, GitHubUserData, GitHubUserSearchData } from "./types";
+import { GitHubActivityData, GitHubUser, GitHubUserSearchData } from "./types";
 
 import { Octokit } from '@octokit/rest';
 
@@ -9,7 +9,7 @@ export default class GitHubService {
 
     public static async getUserActivityData(username: string): Promise<GitHubActivityData> {
         try {
-            const response = await octokit.request(`GET /users/${username}/events/public`, {
+          const response = await octokit.activity.listPublicEvents({
               username: username
             });
             return response.data;
@@ -32,13 +32,14 @@ export default class GitHubService {
         throw new Error(error.message);
       }
     }
+  
 
-    public static async getUserData(username: string): Promise<GitHubUserData> {
+    public static async getUserData(username: string): Promise<GitHubUser> {
       try {
-        const response = await octokit.users.getByUsername({
-          username: username
+        const response = await octokit.search.users({
+          q: username
         });
-        return response.data;
+        return response.data.items;
       } catch (error: any) {
         console.log(error.message);
         throw new Error(error.message);
