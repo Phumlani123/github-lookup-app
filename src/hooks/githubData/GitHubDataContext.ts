@@ -1,9 +1,19 @@
 import { createContext } from 'react';
-import { GitHubActivityData, GitHubUserSearchData } from "../../services/github/types";
-
 interface IGitHubDataContext {
+
+    userActivityData: any;
+    userSearchData: any;
+    userData: any;
+    loading: boolean;
+    error: any;
+    setUserActivityData: (data: any) => void;
+    setUserSearchData: (data: any) => void;
+    setUserData: (data: any) => void;
+    
 }
+
 
 export type GitHubDataContext = IGitHubDataContext;
 
-export const gitHubDataContext = createContext<GitHubDataContext | undefined>(undefined);
+
+export const gitHubDataContext = createContext<GitHubDataContext | null>(null);

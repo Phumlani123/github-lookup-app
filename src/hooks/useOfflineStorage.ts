@@ -3,7 +3,7 @@ interface IUseOfflineStorage {
   loadData: (key: string) => any;
 }
 
-export const useOfflineStorage: () => IUseOfflineStorage = () => {
+export const useOfflineStorage = ({saveData, loadData}:IUseOfflineStorage) => {
 
   return {
   }

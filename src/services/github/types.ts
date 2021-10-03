@@ -10,3 +10,5 @@ export type GitHubActivity = GitHubActivityData[0];
 export type GitHubUserSearchData = GetResponseDataTypeFromEndpointMethod<typeof octokit.search.users>
 
 export type GitHubUser = GitHubUserSearchData['items'];
+
+export type GitHubUserData = GetResponseDataTypeFromEndpointMethod<typeof octokit.users.getByUsername>;

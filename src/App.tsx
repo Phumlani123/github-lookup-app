@@ -6,19 +6,24 @@ import {
 } from 'react-router-dom';
 
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 import GitHubDataProvider from './hooks/githubData/GithubDataProvider';
 import UserActivityView from './views/UserActivity';
 import UserSearchView from './views/UserSearch';
+import Welcome from './views/Welcome';
 
 function App() {
   return (
     <div className="App">
       <GitHubDataProvider>
         <Router>
+          <Route path='/' exact>
+            <Welcome />
+          </Route>
           <Switch>
-            <Route path='/' exact>
+            <Route path='/users' exact>
               <UserSearchView />
             </Route>
             <Route path='/user-activity/:username'>
