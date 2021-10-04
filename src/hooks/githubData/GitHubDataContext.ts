@@ -9,6 +9,7 @@ interface IGitHubDataContext {
     setUserActivityData: (data: any) => void;
     setUserSearchData: (data: any) => void;
     setUserData: (data: any) => void;
+    clearUserData: () => void;
     
 }
 

@@ -10,7 +10,7 @@ const Nav = () => {
                   </Link>
                   <div className="navbar-nav mr-auto">
                     <li className="nav-item">
-                      <Link to={"/users"} className="nav-link">
+                      <Link to={"/users"} className="nav-link text-dark">
                         Users
                       </Link>
                     </li>

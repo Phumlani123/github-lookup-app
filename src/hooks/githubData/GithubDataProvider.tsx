@@ -35,6 +35,7 @@ function ProvideGitHubData(): GitHubDataContext {
       setLoading(false);
     }
   }
+  
 
   const setUserSearchData = async (username: string, page?: number) => {
     setLoading(true);
@@ -63,6 +64,11 @@ function ProvideGitHubData(): GitHubDataContext {
       setLoading(false);
     }
   }
+
+  const clearUserData = () => {
+    setData(null);
+    setActivityData(null);
+  }
   
   return {
     userSearchData,
@@ -71,6 +77,7 @@ function ProvideGitHubData(): GitHubDataContext {
     setUserActivityData,
     setUserSearchData,
     setUserData,
+    clearUserData,
     loading,
     error
   }

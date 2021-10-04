@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGitHubData } from "../../hooks/githubData/useGitHubData";
 import UsersList from "../UsersList/UsersList";
 
@@ -9,11 +9,14 @@ const UserSearchInput = () => {
     const handleChange = (e:any) => {
         setUsername(e.target.value);
     };
+    console.log(data)
+    
     
     const handleSubmit = (e:any) => {
         e.preventDefault();
         setUsers(data.setUserSearchData(username));
     };
+    
     
     return (
         <div className="col-md-12 p-5">

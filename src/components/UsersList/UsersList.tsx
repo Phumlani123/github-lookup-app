@@ -2,7 +2,7 @@ import { useGitHubData } from "../../hooks/githubData/useGitHubData";
 import UsersListItem from "./UsersListItem";
 
 const UsersList = () => {
-    const data = useGitHubData();
+    const data:any = useGitHubData();
     const users:any = data?.userSearchData?.items;
 
     return (
@@ -10,7 +10,7 @@ const UsersList = () => {
         {users 
             ? <div className="row">
                 {users.map((result: any) => (
-                <div className="col-md-4">
+                <div className="col-lg-4  col-md-6">
                     <UsersListItem key={result.id} {...result} />
                 </div>
                 ))}

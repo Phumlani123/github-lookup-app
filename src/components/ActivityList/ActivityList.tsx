@@ -4,41 +4,39 @@ import ActivityListItem from "./ActivityListItem";
 
 const ActivityList = (props:any) => {
     const [userActivity, setUserActivity] = React.useState<any>(null);
+    const [isLoading, setLoading] = React.useState<boolean>(true);
     const data:any = useGitHubData();
-  
+   
     useEffect(() => {
-      setCurrentUser()
-        .then(() => {
-            setUserActivity(data.userActivityData);
-        });
-        
+      setCurrentUser();
     } , []);
 
     // console.log(userActivity);
-    async function setCurrentUser(){
-      await data.setUserActivityData(props.name);     
+     async function setCurrentUser(){
+       await data.setUserActivityData(props.name);
     }
 
+    setTimeout(() => {
+        setUserActivity(data.userActivityData);  
+        setLoading(false);
+    }, 10);
+
+    if(isLoading){
+        return <div className="col-md-12 text-left">Loading...</div>
+    }
     return (
         <>
-        
-                {data.loading ? 
-                    <div>Loading...</div>
-                     : data.error ? 
-                        <div>{data.error}</div>
-                     : userActivity ?
-                        <div className="row">
-                            {userActivity.map((result: any) => (
-                            <div className="col-md-4">
-                                <ActivityListItem key={result.id} {...result} />
-                            </div>
-                            ))}
-                        </div>
-                      :
-                        <div>No Activity</div>
-                }
+
+        <div className="row">
+            {userActivity?.map((result: any) => (
+            <div className="col-md-4">
+                <ActivityListItem  key={result.id} {...result} />
+            </div>
+            ))}
+        </div>
+
         </>
-    );
+        );
 };
 
 export default ActivityList;
