@@ -42,7 +42,7 @@ const UserProfile = (props: any) => {
                         {user?.login}<span className="font-weight-light"></span>
                         </h4>
                         
-                        <div className="h5 mt-4">
+                        <div className="h5 mt-4 mb-0">
                         <a className="btn btn-secondary btn-block" href={user?.repos_url}>GitHub Profile</a>
                         </div>
                     </div>

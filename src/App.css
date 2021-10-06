@@ -42,32 +42,43 @@ body {
   font-family: Roboto,Helvetica,Arial,sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: #212529;
+  color: #282c34;
   text-align: left;
-  background-color: #fafafa;
+  background-color: #f5f5f5!important;
 }
 
 .login {
   min-height: 100vh;
+  text-align: left;
 }
 
-.tinted-image h1 {
-  color: white;
-}
-.tinted-image h3 {
-  color: white;
-}
 
 .img-welcome {
   width: auto!important;
-  height: 40%;
+  height: 10rem;
   margin: auto auto;
+  filter: drop-shadow(20px 20px 39px #f5f5f5);
+  /* filter: drop-shadow(20px 20px 39px #1b2c2b); */
 }
 
 .btn-main {
-  color: #fff;
-  background-color: white!important;
-  border-color: #efefef!important;
+  color: #282c34!important;
+  border-radius: 33px;
+  border-radius: 33px;
+  background: #f5f5f5;
+  box-shadow:  7px 7px 14px #dddddd,
+               -7px -7px 14px #ffffff;
+  transition: all 0.5s ease;
+  width: 100%;
+}
+
+.btn-secondary:focus {
+  box-shadow:  7px 7px 14px #dddddd,
+               -7px -7px 14px #ffffff;
+}
+
+.btn-block {
+  width: 100%;
 }
 
 .btn:not(:disabled):not(.disabled) {
@@ -75,27 +86,31 @@ body {
 }
 .btn-main:hover {
   color: #fff;
-  background-color: #efefef!important;
-  border-color: white!important;
+  background: #f5f5f5;
+  box-shadow:  -7px -7px 14px #dddddd,
+               7px 7px 14px #ffffff;
+             transition: all 0.5s ease;
 }
 
 .tinted-image {
-  background: 
-    linear-gradient(
-      rgba(30 30 30 / 100%), 
-      rgba(32 52 57 / 100%)
-    ),
-    /* bottom, image */
-    url("../src/img/bg-git.jpg") no-repeat center center fixed;
+  background: #f5f5f5;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    
 }
+
+.bg-grey {
+  background-color: #f5f5f5!important;
+}
+
 
 .user-card {
   border-radius: .375rem;
-  background-color: #f1f1f1;
+  background: #f5f5f5;
+  box-shadow:  7px 7px 14px #dddddd,
+               -7px -7px 14px #ffffff;
   padding: 30px;
   text-align: center;
   height: 90%;
@@ -108,7 +123,9 @@ body {
 }
 
 .user-card:hover {
-  box-shadow: -14.142px 14.142px 20px 0px rgb(157 157 157 / 50%);
+  background: #f5f5f5;
+  box-shadow:  -7px 7px 14px #dddddd,
+               7px -7px 14px #ffffff;
   cursor: pointer;
 }
 
@@ -133,18 +150,18 @@ body {
   height: 18rem;
   background-position: center;
   background-size: cover;
+  background: rgb(25 27 28);
   margin: 0;
   padding: 0;
   border: 0;
   display: flex;
   align-items: center;
-  background-image: url("./img/git.png"); 
   transform: translate3d(0px, 0px, 0px);
 }
 
-.header-filter::before {
+/* .header-filter::before {
   background: rgba(0,0,0,.5);
-}
+} */
 
 .header-filter:after, .header-filter:before {
   position: absolute;
@@ -158,7 +175,7 @@ body {
 }
 
 .main {
-  background: #FFF;
+  background: #f5f5f5;
   position: relative;
   z-index: 3;
 }
@@ -166,7 +183,7 @@ body {
 .main-raised {
   margin: -60px 30px 0;
   border-radius: 6px;
-  box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  /* box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%); */
 }
 
 .card-profile-image img {
@@ -185,18 +202,20 @@ body {
 
 .list-card {
   border-radius: .375rem;
-  background-color: #fdfdfd;
+  background-color: #f5f5f5;
   padding: 16px;
   text-align: left;
   height: 80%;
   margin-top: 10px;
   margin-bottom: 30px;
   transition: all 0.3s ease 0s;
-  border-right: 8px solid #d9d9d9;
+  border-top: 8px solid #d9d9d9;
+  
 }
 
 .list-card:hover {
-  box-shadow: -4.142px 14.142px 20px 0px rgb(157 157 157 / 50%);
+  box-shadow:  -7px 7px 14px #dddddd,
+               7px -7px 14px #ffffff;
   cursor: pointer;
 }
 
@@ -219,4 +238,27 @@ button {
 .list-card p {
   margin-bottom: .2em;
   word-break: break-all;
+}
+
+.btn-secondary {
+  color: #4e5756!important;
+  border-color: #f5f5f5!important;
+  background: #f5f5f5!important;
+  box-shadow:  7px 7px 14px #dddddd,
+             -7px -7px 14px #ffffff;
+}
+
+.input-group-append .btn-secondary{
+  height: 3rem;
+}
+
+.form-control {
+
+  background-color: #f5f5f5;
+  background-clip: padding-box;
+  border: 1px solid transparent!important;
+  box-shadow:  7px 7px 14px #dddddd,
+             -7px -7px 14px #ffffff;
+  height: 3rem;
+
 }

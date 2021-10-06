@@ -12,7 +12,6 @@ const ActivityListItem = (props: any) => {
     const hideModal = () => {
         setIsOpen(false);
     };
-    console.log(props)
 
     const formatDate = (dateString:string) => {
         const options:any = { year: "numeric", month: "2-digit", day: '2-digit', hour: '2-digit' }
@@ -23,8 +22,7 @@ const ActivityListItem = (props: any) => {
         <div className="list-card text-left" >
             <img src="/img/git-icon.png" alt="" width="20px"/>
             <p>{props.type}</p>
-            <p>At: {formatDate(props.created_at)}</p>
-            <p>Repo: {props.repo.name}</p>
+            <p className="mb-2">At: {formatDate(props.created_at)}</p>
             <button className="btn btn-secondary btn-block" onClick={showModal}>View details</button>
             <Modal show={isOpen} onHide={hideModal} >
                 <Modal.Header>

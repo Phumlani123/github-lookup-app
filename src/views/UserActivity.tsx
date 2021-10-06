@@ -19,12 +19,12 @@ const UserActivityView = () => {
                 </div>
                 <div className="col-xl-8 order-xl-1">
                     <div className="">
-                        <div className="card-header bg-white border-0">
-                        <div className="row align-items-center">
-                            <div className="col-12 text-left">
-                              <h3 className="mb-0">User Activity</h3>
-                            </div>
-                        </div>
+                        <div className="border-0">
+                          <div className="row align-items-center">
+                              <div className="col-12 text-left">
+                                <h3 className="my-3">User Activity</h3>
+                              </div>
+                          </div>
                         </div>
                         <div className="">
                           <ActivityList name={username}/>

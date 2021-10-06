@@ -6,11 +6,10 @@ const UserSearchInput = () => {
     const [users, setUsers] = React.useState<any>(null);
     const [username, setUsername] = React.useState<any>('');
     const data:any = useGitHubData();
+    
     const handleChange = (e:any) => {
         setUsername(e.target.value);
-    };
-    console.log(data)
-    
+    };    
     
     const handleSubmit = (e:any) => {
         e.preventDefault();

@@ -1,10 +1,14 @@
 import { useGitHubData } from "../../hooks/githubData/useGitHubData";
+import { useOfflineStorage } from "../../hooks/useOfflineStorage";
 import UsersListItem from "./UsersListItem";
 
 const UsersList = () => {
     const data:any = useGitHubData();
     const users:any = data?.userSearchData?.items;
+    const offlineData:any = useOfflineStorage();
+    const offlineUsers:any = offlineData.saveData("users", users);
 
+    console.log('off', offlineData);
     return (
        <>
         {users 
@@ -21,7 +25,7 @@ const UsersList = () => {
                         <h3>Please search for a git hub user</h3>
                     </div>
                     <div className="align-items-center my-5">
-                        <img src="/img/github.png" style={{width: "20%"}} alt=""/>
+                        <img src="/img/GitHub-logo.png" style={{width: "20%"}} alt=""/>
                     </div>
                 </div>
         }
