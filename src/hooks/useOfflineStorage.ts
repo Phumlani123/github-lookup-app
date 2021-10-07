@@ -13,7 +13,8 @@ export const useOfflineStorage = ():IUseOfflineStorage  => {
 
   const loadOfflineData = (key: string) => {
     const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+    console.log(data, key);
+    return data != typeof undefined && data != null ? JSON.parse(data) : null;
   };
 
   return {

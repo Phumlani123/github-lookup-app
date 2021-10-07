@@ -19,6 +19,9 @@ const Nav = () => {
                       <li className="nav-item">
                           <Link className="btn btn-secondary mr-2" to="/">logout</Link>
                       </li>
+                      <li className="nav-item ml-2">
+                          <Link className="btn btn-primary  mr-2" to="/offline-users">Offline mode</Link>
+                      </li>
                   </ul>
               </div>
           </nav>

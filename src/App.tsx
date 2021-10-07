@@ -13,6 +13,7 @@ import GitHubDataProvider from './hooks/githubData/GithubDataProvider';
 import UserActivityView from './views/UserActivity';
 import UserSearchView from './views/UserSearch';
 import Welcome from './views/Welcome';
+import OfflineUsersList from './components/UsersList/OfflineUserList';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           <Switch>
             <Route path='/users' exact>
               <UserSearchView />
+            </Route>
+            <Route path='/offline-users' exact>
+              <OfflineUsersList />
             </Route>
             <Route path='/user-activity/:username'>
               <UserActivityView />

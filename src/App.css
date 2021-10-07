@@ -72,6 +72,18 @@ body {
   width: 100%;
 }
 
+.btn-primary {
+  color: #dddddd!important;
+  border-radius: 33px;
+  border-radius: 33px;
+  border-color: transparent!important;
+  background-color: #242424!important;
+  box-shadow:  7px 7px 14px #dddddd,
+  -7px -7px 14px #ffffff;
+  transition: all 0.5s ease;
+  width: 100%;
+}
+
 .btn-secondary:focus {
   box-shadow:  7px 7px 14px #dddddd,
                -7px -7px 14px #ffffff;
